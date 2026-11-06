@@ -1,13 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
-<defs><linearGradient id="sky" y2="1"><stop stop-color="#08152a"/><stop offset="1" stop-color="#142b3c"/></linearGradient><linearGradient id="road" y2="1"><stop stop-color="#303d4b"/><stop offset=".5" stop-color="#121c28"/><stop offset="1" stop-color="#344453"/></linearGradient><pattern id="asphalt" width="44" height="44" patternUnits="userSpaceOnUse"><circle cx="6" cy="8" r="1" fill="#fff" opacity=".11"/><circle cx="27" cy="32" r="1.3" fill="#fff" opacity=".08"/></pattern></defs>
-<rect width="1600" height="900" fill="url(#sky)"/>
-<g opacity=".35" fill="#6cc8ff"><circle cx="130" cy="115" r="95" filter="url(#none)"/><circle cx="1450" cy="140" r="120"/></g>
-<path d="M-120 180 C250 30 480 60 620 250 S920 570 1150 380 1430 110 1740 270" fill="none" stroke="#738394" stroke-width="360"/>
-<path d="M-120 180 C250 30 480 60 620 250 S920 570 1150 380 1430 110 1740 270" fill="none" stroke="url(#road)" stroke-width="330"/>
-<path d="M-120 180 C250 30 480 60 620 250 S920 570 1150 380 1430 110 1740 270" fill="none" stroke="url(#asphalt)" stroke-width="318"/>
-<path d="M-120 180 C250 30 480 60 620 250 S920 570 1150 380 1430 110 1740 270" fill="none" stroke="#e9f2fa" stroke-width="5" stroke-dasharray="28 18" opacity=".7"/>
-<path d="M-120 180 C250 30 480 60 620 250 S920 570 1150 380 1430 110 1740 270" fill="none" stroke="#ffb52e" stroke-width="12" stroke-dasharray="36 22" opacity=".9"/>
-<g fill="#e9f5ff" opacity=".8"><path d="M70 400h90v12H70zM1400 600h90v12h-90zM750 700h100v12H750z"/></g>
-<g opacity=".7" fill="#14283b"><path d="M0 0h1600v95H0z"/><path d="M0 805h1600v95H0z"/></g>
-<g stroke="#6deaff" stroke-width="4" opacity=".5"><path d="M60 80v140M1540 70v160M800 20v90"/></g>
+<defs>
+ <linearGradient id="grass" x2="0" y2="1"><stop stop-color="#173c35"/><stop offset="1" stop-color="#081d1d"/></linearGradient>
+ <linearGradient id="asphalt" x2="0" y2="1"><stop stop-color="#505963"/><stop offset=".48" stop-color="#242d36"/><stop offset="1" stop-color="#414b55"/></linearGradient>
+ <pattern id="grain" width="34" height="34" patternUnits="userSpaceOnUse"><circle cx="4" cy="7" r="1" fill="#fff" opacity=".15"/><circle cx="24" cy="25" r=".8" fill="#fff" opacity=".12"/></pattern>
+ <pattern id="kerb" width="56" height="24" patternUnits="userSpaceOnUse"><rect width="28" height="24" fill="#f4f3ed"/><rect x="28" width="28" height="24" fill="#d83c43"/></pattern>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="18"/></filter>
+ <filter id="glow"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#grass)"/>
+<path d="M0 0H1600V900H0Z" fill="none" stroke="#5c9876" stroke-width="4" opacity=".35"/>
+<g fill="#0c2825" opacity=".75"><path d="M0 0h1600v105H0zM0 795h1600v105H0z"/></g>
+<g fill="#8db39a" opacity=".12"><path d="M40 140h300v120H40zM1260 620h300v120h-300zM620 20h260v80H620z"/></g>
+<!-- circuit shadow and broad asphalt ribbon -->
+<path d="M-120 610 C80 610 100 300 330 300 L520 300 C660 300 650 110 850 110 L1170 110 C1380 110 1360 340 1510 340 C1660 340 1650 610 1460 610 L1180 610 C1010 610 1030 790 830 790 L430 790 C240 790 260 610 -120 610Z" fill="#02090e" opacity=".72" filter="url(#shadow)" transform="translate(0 22)"/>
+<path d="M-120 610 C80 610 100 300 330 300 L520 300 C660 300 650 110 850 110 L1170 110 C1380 110 1360 340 1510 340 C1660 340 1650 610 1460 610 L1180 610 C1010 610 1030 790 830 790 L430 790 C240 790 260 610 -120 610Z" fill="url(#kerb)" stroke="#f5f0df" stroke-width="8"/>
+<path d="M-120 610 C80 610 100 300 330 300 L520 300 C660 300 650 110 850 110 L1170 110 C1380 110 1360 340 1510 340 C1660 340 1650 610 1460 610 L1180 610 C1010 610 1030 790 830 790 L430 790 C240 790 260 610 -120 610Z" fill="none" stroke="#151c23" stroke-width="44"/>
+<path d="M-120 610 C80 610 100 300 330 300 L520 300 C660 300 650 110 850 110 L1170 110 C1380 110 1360 340 1510 340 C1660 340 1650 610 1460 610 L1180 610 C1010 610 1030 790 830 790 L430 790 C240 790 260 610 -120 610Z" fill="none" stroke="url(#asphalt)" stroke-width="34"/>
+<path d="M-120 610 C80 610 100 300 330 300 L520 300 C660 300 650 110 850 110 L1170 110 C1380 110 1360 340 1510 340 C1660 340 1650 610 1460 610 L1180 610 C1010 610 1030 790 830 790 L430 790 C240 790 260 610 -120 610Z" fill="none" stroke="url(#grain)" stroke-width="31"/>
+<path d="M-120 610 C80 610 100 300 330 300 L520 300 C660 300 650 110 850 110 L1170 110 C1380 110 1360 340 1510 340 C1660 340 1650 610 1460 610 L1180 610 C1010 610 1030 790 830 790 L430 790 C240 790 260 610 -120 610Z" fill="none" stroke="#f4f4ed" stroke-width="2.5" stroke-dasharray="22 25" opacity=".65"/>
+<!-- pit building and grandstands -->
+<g><path d="M420 390h330v115H420z" fill="#142331" stroke="#9baab4" stroke-width="5"/><path d="M440 405h290v22H440z" fill="#e3a83e"/><g fill="#d4e1e8" opacity=".8"><path d="M450 440h70v48h-70zM535 440h70v48h-70zM620 440h90v48h-90z"/></g><text x="585" y="380" fill="#f5f8fa" font-family="Arial" font-size="23" font-weight="bold" text-anchor="middle" letter-spacing="6">NEOSPRINT GP</text></g>
+<g fill="#172c3a" stroke="#718899" stroke-width="4"><path d="M900 360h330l-45 78H945z"/><path d="M980 455h280l-35 58h-210z"/></g>
+<g stroke="#d8e9f3" stroke-width="5" opacity=".75"><path d="M950 370l40 65m25-65 40 65m25-65 40 65m25-65 40 65"/></g>
+<!-- floodlights -->
+<g stroke="#91b7c8" stroke-width="5" fill="#e9fbff"><path d="M150 80v120m0-120h55"/><path d="M1450 80v120m0-120h-55"/><path d="M1450 720v120m0-120h-55"/><path d="M150 720v120m0-120h55"/><circle cx="205" cy="80" r="10"/><circle cx="1395" cy="80" r="10"/><circle cx="1395" cy="720" r="10"/><circle cx="205" cy="720" r="10"/></g>
+<g fill="#d8f7ff" opacity=".3" filter="url(#glow)"><circle cx="205" cy="80" r="35"/><circle cx="1395" cy="80" r="35"/><circle cx="1395" cy="720" r="35"/><circle cx="205" cy="720" r="35"/></g>
+<!-- start/finish gantry -->
+<g><path d="M1280 245v-125h18v125M1390 245v-125h18v125M1280 135h128v18h-128z" fill="#e6edf1"/><path d="M1290 138h108v12h-108z" fill="#e34d4e"/><text x="1344" y="112" fill="#fff" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">START / FINISH</text></g>
+<g fill="#b5d6c4" opacity=".35"><circle cx="80" cy="340" r="28"/><circle cx="90" cy="390" r="20"/><circle cx="1510" cy="760" r="30"/><circle cx="1450" cy="770" r="22"/><circle cx="800" cy="850" r="26"/></g>
 </svg>
