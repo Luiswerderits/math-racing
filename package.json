@@ -1,0 +1,1 @@
+{"name":"math-racing","private":true,"version":"0.1.0","type":"module","scripts":{"dev":"vite --host 0.0.0.0","build":"vite build","preview":"vite preview","test":"vitest run"},"dependencies":{"firebase":"^12.5.0","phaser":"^3.90.0","qrcode":"^1.5.4"},"devDependencies":{"vite":"^7.1.12","vitest":"^3.2.4"}}
