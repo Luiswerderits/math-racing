@@ -1,0 +1,1 @@
+export function getRoomFromUrl(search=window.location.search){const p=new URLSearchParams(search);const code=(p.get('room')||'').trim().toUpperCase();return /^[A-Z0-9]{4,8}$/.test(code)?code:'';}
