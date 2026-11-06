@@ -4,3 +4,86 @@ label{display:block;margin-top:24px;color:#8f9bb4;font-size:11px;font-weight:800
 
 /* RACE MVP */
 .race-top{display:flex;justify-content:space-between;align-items:center;gap:16px}.race-top h2{font:900 30px 'Barlow Condensed';margin:8px 0;color:#fff}.race-counter{text-align:right;color:#9eabc8;font-size:10px;letter-spacing:1px}.race-counter b{display:block;color:#00e5ff;font:900 38px 'Barlow Condensed'}.race-track{position:relative;margin:22px 0;padding:16px 12px;background:#0a1020;border:1px solid #287bff66;border-radius:10px;overflow:hidden}.finish-line{position:absolute;right:7%;top:0;bottom:0;width:12px;background:repeating-linear-gradient(0deg,#fff 0 8px,#111 8px 16px);opacity:.8}.race-lane{display:grid;grid-template-columns:72px 1fr 42px;align-items:center;gap:8px;min-height:44px;border-bottom:1px solid #ffffff12}.race-lane:last-child{border:0}.lane-name{font-size:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#a5aec2}.lane-road{height:26px;position:relative;background:repeating-linear-gradient(90deg,#ffffff10 0 2px,transparent 2px 32px);border-bottom:2px dashed #ffffff30}.race-lane>b{font-size:10px;color:#00e5ff;text-align:right}.race-car{position:absolute;top:2px;width:25px;height:17px;border-radius:7px 10px 4px 4px;background:#168dff;box-shadow:0 0 14px currentColor;transition:left .45s ease}.race-car.purple{background:#8b5cf6;color:#8b5cf6}.race-car.cyan{background:#00e5ff;color:#00e5ff}.race-car.red{background:#ff5364;color:#ff5364}.challenge{padding:20px;background:#111827;border:1px solid #ffffff20;border-radius:10px}.question{font:900 52px 'Barlow Condensed';color:#fff;margin:10px 0 18px}.challenge form{display:flex;gap:10px;flex-wrap:wrap}.challenge input{flex:1;min-width:120px;margin:0}.challenge button{white-space:nowrap}.feedback{font-size:12px;margin:12px 0 0}.feedback.correct{color:#48e5a2}.feedback.wrong{color:#ff7180}.race-ranking{margin-top:20px}.race-ranking h3{font-size:11px;letter-spacing:2px;color:#9eabc8}.rank-row{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #ffffff12;font-size:12px}.rank-row>span:first-child{color:#00e5ff;font-weight:900}.rank-row>span:last-child{margin-left:auto;color:#9eabc8}@media(max-width:520px){.race-top h2{font-size:24px}.race-lane{grid-template-columns:56px 1fr 34px}.challenge form{flex-direction:column}.challenge button{width:100%}}
+
+
+/* MATH RACING — ARCADE GAME REDESIGN */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
+:root{font-family:Inter,system-ui,sans-serif;color:#f4f7ff;background:#05070d;font-synthesis:none}
+*{box-sizing:border-box}
+body{min-height:100vh;margin:0;overflow-x:hidden;background:radial-gradient(ellipse at 50% -15%,#182b51 0,transparent 55%),radial-gradient(ellipse at 100% 75%,#17103b 0,transparent 40%),#05070d;color:#f4f7ff}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.17;background-image:linear-gradient(#60749b18 1px,transparent 1px),linear-gradient(90deg,#60749b18 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent 90%)}
+header,footer{position:relative;width:min(1320px,94%);padding:22px 0;margin:auto;border:0}
+header{border-bottom:1px solid #ffffff16}
+header b{font:900 25px Orbitron,sans-serif;letter-spacing:2px;color:#fff;text-shadow:0 0 22px #00d9ff55}
+header b:before{content:"▰";color:#00e5ff;margin-right:10px;font-size:18px}
+header span,footer{font:700 10px Rajdhani,sans-serif;letter-spacing:3px;color:#74839f}
+main{position:relative;width:min(1320px,94%);min-height:calc(100vh - 145px);margin:0 auto;padding:65px 0;display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+main>section{position:relative;z-index:1}
+main section>small,.race-top small,.challenge>small{font:700 11px Orbitron,sans-serif;letter-spacing:3px;color:#00e5ff;text-shadow:0 0 15px #00e5ff55}
+h1{max-width:700px;font:900 clamp(58px,7vw,100px)/.9 Orbitron,sans-serif;letter-spacing:-5px;text-transform:uppercase;margin:26px 0 22px}
+h1 em{display:block;margin-top:12px;font-style:normal;color:#55c9ff;text-shadow:0 0 28px #168dff55}
+p{color:#9caac3;font-size:15px;line-height:1.8;max-width:540px}
+label{font:700 11px Rajdhani,sans-serif;letter-spacing:2px;color:#8fa2c4}
+input{width:100%;max-width:440px;margin-top:10px;padding:17px 18px;background:#0b1221;border:1px solid #334765;border-radius:9px;color:white;font:600 15px Inter;box-shadow:inset 0 1px 8px #0008;transition:.2s}
+input:focus{outline:0;border-color:#00dcff;box-shadow:0 0 0 3px #00dcff20,0 0 22px #00dcff20}
+.actions{gap:12px;margin-top:22px}
+button{position:relative;padding:17px 23px;border:1px solid #7beaff55;border-radius:8px;background:linear-gradient(115deg,#00c9ee,#267bff);color:#03101d;font:900 12px Orbitron,sans-serif;letter-spacing:1px;box-shadow:0 8px 28px #087dff35,inset 0 1px #ffffff70;transition:transform .18s,filter .18s;cursor:pointer}
+button:hover{transform:translateY(-2px);filter:brightness(1.15)}
+button:active{transform:translateY(1px)}
+button:disabled{opacity:.35;cursor:not-allowed}
+button.secondary{background:#101a2d;color:#dbeaff;border:1px solid #506486;box-shadow:none}
+.track{height:430px;border:1px solid #3d8dff55;border-radius:22px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 50%,#182d4d,#090f1d 70%);transform:none;box-shadow:0 30px 90px #0009,0 0 55px #176bff18,inset 0 0 50px #0008}
+.track:after{content:"";position:absolute;inset:0;background:linear-gradient(130deg,transparent 20%,#00d9ff12 50%,transparent 70%);animation:scan 6s linear infinite}
+.track:before{content:"";position:absolute;left:-10%;right:-10%;top:28%;height:52%;border:5px solid #3c536f;border-left:0;border-right:0;border-radius:50%;transform:rotate(-18deg);box-shadow:0 0 0 7px #101b2b,0 0 0 9px #00dfff66,0 0 35px #00bfff55;background:repeating-linear-gradient(90deg,transparent 0 45px,#ffffff12 46px 48px)}
+.car{z-index:2;width:105px;height:42px;border-radius:17px 25px 9px 9px;transform:rotate(-18deg);top:42%;left:20%;box-shadow:0 0 24px currentColor}
+.car:before{content:"";position:absolute;left:30px;top:-12px;width:43px;height:20px;border-radius:15px 15px 3px 3px;background:linear-gradient(90deg,#91dfff,#143e76);border:2px solid #a8eaff}
+.car:after{content:"";position:absolute;left:8px;right:8px;bottom:-5px;height:8px;border-radius:6px;background:#060a12;box-shadow:0 0 0 2px #7087a8}
+.car.purple{top:62%;left:55%}
+.track strong{z-index:2;bottom:24px;left:25px;font:800 12px Orbitron,sans-serif;letter-spacing:3px;color:#c2d8ff}
+footer{display:flex;justify-content:space-between;border-top:1px solid #ffffff14;margin-top:0;padding:18px 0}
+.notice{z-index:20;bottom:25px;padding:15px 22px;background:#111d32;border:1px solid #00dcff66;border-radius:10px;color:#e8f7ff;box-shadow:0 12px 40px #000b;font-size:13px}
+.config-warning{border:1px solid #ffbd4a55;background:#ffbd4a10;color:#ffd68a;border-radius:10px;padding:15px;font-size:12px}
+.lobby{padding-top:45px}
+.room-panel{padding:26px;background:linear-gradient(145deg,#111d31ed,#090f1d);border:1px solid #385174;border-radius:16px;box-shadow:0 20px 60px #0007}
+.room-code{font:700 11px Orbitron,sans-serif;color:#92a8ca;letter-spacing:2px}
+.room-code strong{font:900 46px Orbitron,sans-serif;color:#00e5ff;letter-spacing:8px;text-shadow:0 0 24px #00dfff66}
+.room-grid{grid-template-columns:1fr auto;align-items:start}
+.room-grid h3,.race-ranking h3{font:700 11px Orbitron,sans-serif;letter-spacing:2px;color:#8da5ca}
+.player-list li{border-bottom:1px solid #ffffff12;padding:13px 0;color:#e5edff}
+.qr-box{padding:12px;border-radius:12px;box-shadow:0 0 30px #00cfff18}
+.qr-box img{width:158px;height:158px}
+.qr-box small{font:800 9px Orbitron,sans-serif;color:#111}
+.waiting{font:700 12px Rajdhani,sans-serif;letter-spacing:1px}
+.race-top{padding:0 0 17px;border-bottom:1px solid #ffffff19}
+.race-top h2{font:900 clamp(23px,3vw,36px) Orbitron,sans-serif;letter-spacing:-1px;margin:9px 0;color:#f4f7ff}
+.race-counter{font:700 10px Orbitron,sans-serif;color:#91a4c5}
+.race-counter b{font:900 42px Orbitron,sans-serif;color:#00e5ff;text-shadow:0 0 20px #00dfff70}
+.race-track{position:relative;margin:24px 0;padding:20px 17px 20px;background:linear-gradient(135deg,#101a2b,#080d17);border:1px solid #355174;border-radius:15px;box-shadow:inset 0 0 45px #0009,0 12px 35px #0005}
+.race-track:before{content:"";position:absolute;inset:0;opacity:.16;background:repeating-linear-gradient(0deg,transparent 0 43px,#8ca6c8 44px 45px);pointer-events:none}
+.finish-line{right:7%;width:15px;opacity:1;background:repeating-conic-gradient(#fff 0 25%,#121923 0 50%) 0/14px 14px;box-shadow:0 0 20px #fff8}
+.race-lane{position:relative;z-index:1;grid-template-columns:90px 1fr 46px;min-height:54px;border-bottom:1px dashed #50617c66}
+.lane-name{font:700 11px Rajdhani,sans-serif;letter-spacing:.5px;color:#b8c8e3}
+.lane-road{height:31px;border:0;background:repeating-linear-gradient(90deg,transparent 0 38px,#ffffff20 39px 41px);border-bottom:2px dashed #8ca1c655}
+.race-car{top:4px;width:35px;height:21px;border-radius:8px 12px 5px 5px;background:linear-gradient(160deg,#7deaff,#087dff);box-shadow:0 0 15px #00cfff;transition:left .55s cubic-bezier(.2,.8,.2,1)}
+.race-car:before{content:"";position:absolute;left:10px;top:-6px;width:15px;height:10px;border-radius:6px 6px 1px 1px;background:#a7edff;border:1px solid #fff8}
+.race-car:after{content:"";position:absolute;left:3px;right:3px;bottom:-4px;height:5px;border-radius:4px;background:#05080e}
+.race-car.purple{background:linear-gradient(160deg,#d6a5ff,#8535e9);color:#9d50ff}
+.race-car.cyan{background:linear-gradient(160deg,#9bfff1,#00a88b);color:#00e5bd}
+.race-car.red{background:linear-gradient(160deg,#ff9caa,#ed3156);color:#ff5364}
+.race-lane>b{font:700 10px Orbitron,sans-serif}
+.challenge{position:relative;padding:25px;background:linear-gradient(145deg,#14243b,#0b1322);border:1px solid #41618a;border-radius:16px;box-shadow:0 15px 40px #0006}
+.challenge:before{content:"";position:absolute;top:0;left:22px;right:22px;height:2px;background:linear-gradient(90deg,transparent,#00e5ff,transparent);box-shadow:0 0 15px #00e5ff}
+.question{font:900 clamp(42px,6vw,64px) Orbitron,sans-serif;letter-spacing:-3px;color:#fff;text-shadow:0 0 24px #54bfff45;margin:18px 0}
+.challenge form{display:flex;gap:12px;align-items:stretch}
+.challenge input{max-width:none;flex:1;margin:0;background:#070d18;border-color:#405777;font:700 17px Inter}
+.challenge button{min-width:155px}
+.feedback{font:600 12px Rajdhani,sans-serif;letter-spacing:.5px}
+.feedback.correct{color:#5df5b0}.feedback.wrong{color:#ff8095}
+.race-ranking{padding:20px 22px;margin-top:22px;background:#0b1220;border:1px solid #283c59;border-radius:13px}
+.rank-row{padding:12px 0;border-color:#ffffff13;font:600 12px Rajdhani,sans-serif}
+.rank-row>span:first-child{font:800 14px Orbitron,sans-serif;color:#00e5ff}
+.rank-row>span:last-child{font:700 11px Orbitron,sans-serif}
+@keyframes scan{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+@media(max-width:850px){main{gap:28px;padding:45px 0}.track{height:340px}h1{letter-spacing:-3px}}
+@media(max-width:700px){main,.lobby{grid-template-columns:1fr;min-height:auto;padding:42px 0;margin:auto}.track,.lobby-side{display:none}h1{font-size:clamp(48px,13vw,72px)}header{padding:18px 0}header span{font-size:8px}footer{gap:12px;flex-wrap:wrap;font-size:9px}.room-grid{grid-template-columns:1fr}.qr-box{width:max-content}.race-lane{grid-template-columns:65px 1fr 38px}.challenge form{flex-direction:row}.challenge button{min-width:120px;padding:15px 12px}.race-top h2{font-size:22px}}
+@media(max-width:420px){.challenge{padding:18px}.challenge form{flex-direction:column}.challenge button{width:100%}.room-panel{padding:18px}.race-track{padding:12px 8px}.race-lane{grid-template-columns:55px 1fr 32px;gap:5px}}
