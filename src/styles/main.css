@@ -24,3 +24,19 @@ main:has(.race-top){display:block;width:min(1500px,96%);min-height:auto;padding:
 @media(max-width:850px){main,.lobby{grid-template-columns:1fr;gap:30px;padding:38px 0}.track{height:330px}.lobby-side{display:none}.room-grid{grid-template-columns:1fr 145px}}
 @media(max-width:600px){header,footer{width:94%}header b{font-size:18px}header span{font-size:8px}main{width:94%}main h1{font-size:55px}.track{height:280px}.race-top h2{font-size:23px}.race-counter{min-width:95px;padding:8px}.race-counter b{font-size:28px}.race-arena{padding:8px}.race-track{min-height:350px;padding:25px 17px 22px 15px;border-width:6px}#race-cars{min-height:290px}.race-lane{grid-template-columns:57px minmax(0,1fr) 34px;gap:6px;min-height:47px}.lane-name{font-size:9px;letter-spacing:0}.lane-road{height:32px}.race-car{width:60px;height:29px;top:2px}.finish-line{right:8px;width:12px;background-size:12px 12px}.start-line{left:5px;width:7px}.arena-heading{font-size:7px;letter-spacing:.3px}.arena-heading b{font-size:7px}.arena-footer{font-size:7px;letter-spacing:.2px}.challenge{padding:18px}.challenge form{flex-direction:column}.challenge form button{width:100%}.room-grid{grid-template-columns:1fr 125px}.qr-box{padding:8px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* NeoSprint: nova identidade visual e carro ilustrado */
+.track{background-image:linear-gradient(180deg,#07132122,#07132188),url("./neonsprint-track.svg");background-size:cover;background-position:center}
+.track:before{border-color:#8999a7;box-shadow:0 0 0 5px #111c2a,0 0 0 8px #ffb52e88,0 0 45px #ff9d2866}
+.track .car{width:148px;height:65px;background:transparent url("./neonsprint-car.svg") center/contain no-repeat;border-radius:0;box-shadow:none;filter:drop-shadow(0 8px 9px #000b);transform:rotate(-12deg)}
+.track .car:before,.track .car:after{display:none}
+.track .car.purple{background-image:url("./neonsprint-car.svg");filter:hue-rotate(95deg) drop-shadow(0 8px 9px #000b)}
+.race-track{background-image:linear-gradient(90deg,#07132177,#07132122 35%,#07132155),url("./neonsprint-track.svg");background-size:cover;background-position:center}
+.race-track:before{background:linear-gradient(180deg,#07132188,#07132133 28%,#07132133 75%,#07132188),repeating-linear-gradient(0deg,transparent 0 70px,#fff2 71px 73px)}
+.lane-road{background:repeating-linear-gradient(90deg,transparent 0 68px,#fff3 69px 72px),linear-gradient(180deg,#151d27,#303b47 50%,#151d27);border-top:2px solid #f0b43f;border-bottom:2px solid #f0b43f}
+.race-car{width:116px;height:52px;top:-3px;background:transparent!important;box-shadow:none!important;filter:drop-shadow(0 8px 6px #000c);animation:neo-engine .22s infinite alternate}
+.race-car img{display:block;width:100%;height:100%;object-fit:contain}
+.race-car:before,.race-car:after{display:none!important}
+.race-car.purple img{filter:hue-rotate(95deg)}.race-car.cyan img{filter:hue-rotate(145deg)}.race-car.red img{filter:hue-rotate(320deg)}
+@keyframes neo-engine{from{translate:0 -1px}to{translate:0 1px}}
+@media(max-width:600px){.race-car{width:76px;height:37px;top:-1px}}
