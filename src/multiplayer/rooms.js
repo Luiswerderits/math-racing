@@ -1,4 +1,4 @@
-import { ref, get, set, update, onValue, runTransaction, serverTimestamp } from 'firebase/database';
+import { ref, get, set, update, onValue, runTransaction } from 'firebase/database';
 import { db, ensureAnonymousUser } from '../firebase/client.js';
 
 const alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -20,7 +20,7 @@ export async function createRoom(name) {
     const roomRef = ref(db, `rooms/${code}`);
     const result = await runTransaction(roomRef, (current) => current === null ? {
       code, hostUid: user.uid, status: 'lobby', createdAt: Date.now(), maxPlayers: 12,
-      players: { [user.uid]: { uid: user.uid, nickname, car: 'blue', joinedAt: Date.now(), isHost: true } }
+      players: { [user.uid]: { uid: user.uid, nickname, car: 'blue', joinedAt: Date.now(), isHost: true, progress: 0, finished: false } }
     } : undefined, { applyLocally: false });
     if (result.committed) return code;
   }
@@ -38,7 +38,7 @@ export async function joinRoom(codeInput, name, car = 'blue') {
   const players = Object.keys(room.players || {});
   if (!room.players?.[user.uid] && players.length >= (room.maxPlayers || 12)) throw new Error('A sala está cheia.');
   await set(ref(db, `rooms/${code}/players/${user.uid}`), {
-    uid: user.uid, nickname: cleanName(name), car, joinedAt: Date.now(), isHost: user.uid === room.hostUid
+    uid: user.uid, nickname: cleanName(name), car, joinedAt: Date.now(), isHost: user.uid === room.hostUid, progress: 0, finished: false
   });
   return code;
 }
@@ -50,7 +50,11 @@ export async function startRoom(code) {
   const roomRef = ref(db, `rooms/${code}`);
   const snapshot = await get(roomRef);
   if (!snapshot.exists() || snapshot.val().hostUid !== user.uid) throw new Error('Somente o anfitrião pode iniciar.');
-  await update(roomRef, { status: 'countdown', startedAt: Date.now() });
+  await update(roomRef, { status: 'racing', startedAt: Date.now() });
+}
+export async function updatePlayerProgress(code, progress, finished) {
+  const user = await ensureAnonymousUser();
+  await update(ref(db, `rooms/${code}/players/${user.uid}`), { progress, finished, updatedAt: Date.now() });
 }
 export async function leaveRoom(code) {
   const user = await ensureAnonymousUser();
