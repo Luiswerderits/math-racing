@@ -64,7 +64,7 @@ function renderRace(room, code) {
   document.querySelector('#race-count').textContent = localProgress;
   const players = Object.values(room.players || {}).sort((a,b)=>(b.progress||0)-(a.progress||0));
   const cars = document.querySelector('#race-cars');
-  if (cars) cars.innerHTML = players.map((p,i)=>`<div class="race-lane"><span class="lane-name">${escapeHtml(p.nickname)}</span><div class="lane-road"><div class="race-car ${escapeHtml(p.car||'blue')}" style="left:${Math.min(92,(Number(p.progress||0)/RACE_LENGTH)*92)}%"><img src="./neonsprint-car.svg" alt="Carro de corrida"></div></div><b>${Number(p.progress||0)}/${RACE_LENGTH}</b></div>`).join('');
+  if (cars) { players.forEach(p => { cars.dataset[p.uid] = String(Number(p.progress||0)); }); cars.innerHTML = players.map((p,i)=>`<div class="race-lane"><span class="lane-name">${escapeHtml(p.nickname)}</span><div class="lane-road"><div class="race-car ${escapeHtml(p.car||'blue')} ${Number(p.progress||0) > Number(cars.dataset[ p.uid ] || 0) ? 'boost' : ''}" style="left:${Math.min(92,(Number(p.progress||0)/RACE_LENGTH)*92)}%"><img src="./neonsprint-car.svg" alt="Carro de corrida"></div></div><b>${Number(p.progress||0)}/${RACE_LENGTH}</b></div>`).join(''); }
   const ranking = document.querySelector('#race-ranking');
   if (ranking) ranking.innerHTML = `<h3>CLASSIFICAÇÃO</h3>${players.map((p,i)=>`<div class="rank-row"><span>${i+1}º</span><b>${escapeHtml(p.nickname)}</b><span>${Number(p.progress||0)} pontos ${p.finished?'🏁':''}</span></div>`).join('')}`;
   if (players.length && players.every(p=>p.finished)) { const feedback=document.querySelector('#feedback'); if(feedback) feedback.textContent='🏆 Corrida encerrada! Todos chegaram.'; }
