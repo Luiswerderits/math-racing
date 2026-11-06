@@ -87,3 +87,65 @@ footer{display:flex;justify-content:space-between;border-top:1px solid #ffffff14
 @media(max-width:850px){main{gap:28px;padding:45px 0}.track{height:340px}h1{letter-spacing:-3px}}
 @media(max-width:700px){main,.lobby{grid-template-columns:1fr;min-height:auto;padding:42px 0;margin:auto}.track,.lobby-side{display:none}h1{font-size:clamp(48px,13vw,72px)}header{padding:18px 0}header span{font-size:8px}footer{gap:12px;flex-wrap:wrap;font-size:9px}.room-grid{grid-template-columns:1fr}.qr-box{width:max-content}.race-lane{grid-template-columns:65px 1fr 38px}.challenge form{flex-direction:row}.challenge button{min-width:120px;padding:15px 12px}.race-top h2{font-size:22px}}
 @media(max-width:420px){.challenge{padding:18px}.challenge form{flex-direction:column}.challenge button{width:100%}.room-panel{padding:18px}.race-track{padding:12px 8px}.race-lane{grid-template-columns:55px 1fr 32px;gap:5px}}
+
+
+/* GRAND PRIX UPDATE — WIDE RACE ARENA */
+main:has(.race-top){width:min(1540px,96%);min-height:auto;display:block;padding:28px 0 52px;margin:0 auto}
+main:has(.race-top)>section{width:100%}
+main:has(.race-top) .lobby-side{display:none}
+.room-panel:has(.race-top){width:100%;margin-top:18px;padding:0;background:transparent;border:0;box-shadow:none}
+.race-top{display:flex;align-items:center;padding:10px 8px 22px}
+.race-top h2{font-size:clamp(25px,3vw,42px);letter-spacing:1px}
+.race-counter{min-width:115px;padding:12px 17px;border:1px solid #00dfff55;border-radius:12px;background:linear-gradient(145deg,#10263b,#0a1220);box-shadow:0 0 28px #00dfff16}
+.race-counter b{font-size:48px;line-height:1.05}
+.race-arena{position:relative;margin:12px 0 26px;padding:15px 18px 13px;border:1px solid #4775a6;border-radius:20px;overflow:hidden;background:linear-gradient(145deg,#0d1a2b,#070c16 68%);box-shadow:0 25px 70px #000a,0 0 45px #087dff20,inset 0 1px #ffffff20}
+.race-arena:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background:radial-gradient(ellipse at 50% 0,#1a75a866,transparent 65%),linear-gradient(90deg,#00dfff0a,transparent 30%,#a855f70a)}
+.arena-heading,.arena-footer{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:7px 5px 14px;font:800 10px Orbitron,sans-serif;letter-spacing:1.6px;color:#a9c7e9}
+.arena-heading span{color:#eaf8ff}
+.arena-heading b{color:#00e5ff;font-size:9px}
+.race-track{isolation:isolate;position:relative;min-height:clamp(390px,54vh,690px);margin:0;padding:34px 42px 30px 34px;border:2px solid #526b86;border-radius:14px;overflow:hidden;background:repeating-linear-gradient(0deg,transparent 0 58px,#ffffff0a 59px 60px),linear-gradient(180deg,#202b3b 0%,#111b2a 50%,#202b3b 100%);box-shadow:inset 0 0 0 7px #080e18,inset 0 0 60px #000c,0 0 0 1px #00dfff55}
+.race-track:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.52;background:repeating-linear-gradient(90deg,transparent 0 74px,#ffffff0b 75px 77px),linear-gradient(180deg,#ffffff08,transparent 20%,transparent 80%,#ffffff08)}
+.track-glow{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#00dfff0d,transparent 22%,transparent 78%,#ffb13b12)}
+.start-line{position:absolute;z-index:1;left:22px;top:0;bottom:0;width:12px;border-inline:2px solid #d6eaff;background:repeating-linear-gradient(0deg,#fff 0 9px,#111827 9px 18px);opacity:.8;box-shadow:0 0 18px #fff7}
+.start-line span,.finish-line span{position:absolute;top:-23px;left:50%;transform:translateX(-50%);white-space:nowrap;font:800 8px Orbitron,sans-serif;letter-spacing:1px;color:#b8d5f4}
+.finish-line{z-index:1;right:25px;top:0;bottom:0;width:18px;border-inline:2px solid #d6eaff;background:repeating-conic-gradient(#fff 0 25%,#111827 0 50%) 0/18px 18px;opacity:1;box-shadow:0 0 25px #fff9}
+.finish-line span{color:#fff}
+#race-cars{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-evenly;min-height:clamp(320px,48vh,620px);gap:3px}
+.race-lane{display:grid;grid-template-columns:minmax(90px,13%) minmax(0,1fr) 58px;align-items:center;gap:15px;min-height:58px;padding:4px 0;border-bottom:1px dashed #b6c9e52a}
+.race-lane:last-child{border-bottom:0}
+.lane-name{font:800 12px Rajdhani,sans-serif;letter-spacing:1px;color:#e3efff;text-transform:uppercase}
+.lane-road{position:relative;height:38px;border:0;border-radius:5px;background:repeating-linear-gradient(90deg,transparent 0 54px,#ffffff35 55px 58px),linear-gradient(180deg,#080d16,#111a28 50%,#080d16);box-shadow:inset 0 5px 9px #0009,inset 0 -4px 7px #0008}
+.lane-road:before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed #d7e5f44d}
+.race-car{top:7px;width:48px;height:25px;border-radius:9px 17px 6px 6px;background:linear-gradient(160deg,#a7f4ff,#0787ff 65%,#0750b6);box-shadow:0 0 15px #00cfff,0 5px 8px #000b;transition:left .55s cubic-bezier(.2,.8,.2,1);animation:car-idle .22s infinite alternate}
+.race-car:before{left:14px;top:-8px;width:20px;height:13px;border-radius:8px 8px 2px 2px;background:linear-gradient(130deg,#d8faff,#27648f);border:1px solid #d8faff}
+.race-car:after{left:5px;right:5px;bottom:-5px;height:6px;background:#03060c;box-shadow:0 0 8px #00dfff88}
+.race-car.purple{background:linear-gradient(160deg,#edc9ff,#9c42f2 65%,#5a1ca4);box-shadow:0 0 15px #bd72ff,0 5px 8px #000b}
+.race-car.cyan{background:linear-gradient(160deg,#c0fff2,#00cba7 65%,#087b69);box-shadow:0 0 15px #00e5bd,0 5px 8px #000b}
+.race-car.red{background:linear-gradient(160deg,#ffc1c9,#f43d64 65%,#a7183c);box-shadow:0 0 15px #ff5364,0 5px 8px #000b}
+.race-lane>b{font:800 11px Orbitron,sans-serif;color:#eaf7ff}
+.arena-footer{padding:13px 5px 2px;color:#7896b8}
+.arena-footer span:last-child{display:flex;align-items:center;gap:8px;color:#65f4bd}
+.arena-footer i{width:7px;height:7px;border-radius:50%;background:#55f5ad;box-shadow:0 0 12px #55f5ad;animation:live-pulse 1s infinite}
+.challenge{max-width:100%;padding:28px 32px;border-radius:16px}
+.challenge .question{font-size:clamp(48px,6vw,72px)}
+.race-ranking{max-width:100%;padding:22px 28px}
+@keyframes car-idle{from{filter:brightness(.96)}to{filter:brightness(1.18)}}
+@keyframes live-pulse{50%{opacity:.35;transform:scale(.75)}}
+@media(max-width:700px){
+ main:has(.race-top){width:96%;padding:15px 0 35px}
+ .race-arena{padding:10px;border-radius:13px}
+ .arena-heading{font-size:8px;letter-spacing:.7px}
+ .arena-heading b{font-size:7px}
+ .race-track{min-height:350px;padding:25px 25px 22px 22px}
+ #race-cars{min-height:300px}
+ .race-lane{grid-template-columns:58px minmax(0,1fr) 34px;gap:6px;min-height:48px}
+ .lane-name{font-size:9px;letter-spacing:0}
+ .lane-road{height:30px}
+ .race-car{width:35px;height:19px;top:5px}
+ .race-car:before{left:10px;top:-6px;width:15px;height:10px}
+ .start-line{left:10px;width:8px}
+ .finish-line{right:12px;width:12px;background-size:12px 12px}
+ .finish-line span,.start-line span{font-size:6px}
+ .arena-footer{font-size:7px;letter-spacing:.5px}
+ .challenge{padding:20px}
+}
